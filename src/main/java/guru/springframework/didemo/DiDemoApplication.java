@@ -13,10 +13,11 @@ public class DiDemoApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DiDemoApplication.class, args);
-		MyController controller = (MyController) ctx.getBean("myController");
-		controller.hello();
 		
-		System.out.println(ctx.getBean(PropertyInjectedController.class).greetingService.sayGreeting());
+		MyController controller = (MyController) ctx.getBean("myController");
+		
+		System.out.println(controller.hello());
+		System.out.println(ctx.getBean(PropertyInjectedController.class).greetingServiceImpl.sayGreeting());
 		System.out.println(ctx.getBean(SetterInjectedController.class).sayGreeting());
 		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayGreeting());
 		
