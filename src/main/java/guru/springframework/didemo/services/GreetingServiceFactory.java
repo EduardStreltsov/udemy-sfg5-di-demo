@@ -14,7 +14,12 @@ public class GreetingServiceFactory {
 			case "en":
 				return new PrimaryGreetingService(greetingRepository);
 			case "de":
-				return new PrimaryGermanGreetingService()
+				return new PrimaryGermanGreetingService(greetingRepository);
+			case "es":
+				return new PrimarySpanishGreetingService(greetingRepository);
+			default:
+				return new PrimaryGreetingService(greetingRepository);
+				
 		}
 	}
 }
